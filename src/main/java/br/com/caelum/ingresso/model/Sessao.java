@@ -5,34 +5,34 @@ import java.time.temporal.ChronoUnit;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.ManyToOne;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Sessao {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
+
 	private LocalTime horario;
-	
+
 	@ManyToOne
 	private Sala sala;
-	
+
 	@ManyToOne
 	private Filme filme;
-	
+
 	/*
 	 * @deprecated hibernate only
 	 */
-	public Sessao() {}
-	
+	public Sessao() {
+	}
+
 	public Sessao(LocalTime horario, Filme filme, Sala sala) {
 		this.horario = horario;
 		this.setFilme(filme);
 		this.sala = sala;
-		
 	}
 
 	public Integer getId() {
@@ -63,10 +63,10 @@ public class Sessao {
 		return filme;
 	}
 
-	public Filme setFilme(Filme filme) {
+	public void setFilme(Filme filme) {
 		this.filme = filme;
 	}
-	
+
 	public LocalTime getHorarioTermino() {
 		return this.horario.plus(filme.getDuracao().toMinutes(), ChronoUnit.MINUTES);
 	}
