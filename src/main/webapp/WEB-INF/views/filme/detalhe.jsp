@@ -5,8 +5,7 @@
   Time: 12:51
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib tagdir="/WEB-INF/tags/" prefix="ingresso" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -61,7 +60,7 @@
 								<td>${sessao.sala.nome}</td>
 								<td>${sessao.horario}</td>
 								<td>
-									<a href="/sessao/${sessao.id}/lugares" class="btn">
+									<a href="/admin/sessao/${sessao.id}/lugares" class="btn">
 										Comprar
 										<span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>
 									</a>
