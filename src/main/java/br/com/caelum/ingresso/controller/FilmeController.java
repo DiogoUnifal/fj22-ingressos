@@ -1,6 +1,6 @@
 package br.com.caelum.ingresso.controller;
 
-import br.caelum.ingresso.rest.ImdbClient;
+
 import br.com.caelum.ingresso.dao.FilmeDao;
 import br.com.caelum.ingresso.dao.SessaoDao;
 import br.com.caelum.ingresso.model.DetalhesDoFilme;
@@ -31,8 +31,7 @@ public class FilmeController {
 	@Autowired
 	private SessaoDao sessaoDao;
 	
-	@Autowired
-	private ImdbClient client;
+	
 
 	@GetMapping({ "/admin/filme", "/admin/filme/{id}" })
 	public ModelAndView form(@PathVariable("id") Optional<Integer> id, Filme filme) {
@@ -98,10 +97,10 @@ public class FilmeController {
 		Filme filme = filmeDao.findOne(id);
 		List<Sessao> sessoes = sessaoDao.buscaSessoesDoFilme(filme);
 		
-		Optional<DetalhesDoFilme> detalhesDoFilme = client.request(filme, DetalhesDoFilme.class);
+		//Optional<DetalhesDoFilme> detalhesDoFilme = client.request(filme, DetalhesDoFilme.class);
 
 		modelAndView.addObject("sessoes", sessoes);
-		modelAndView.addObject("detalhes", detalhesDoFilme.orElse(new DetalhesDoFilme()));
+		//modelAndView.addObject("detalhes", detalhesDoFilme.orElse(new DetalhesDoFilme()));
 
 		return modelAndView;
 	}

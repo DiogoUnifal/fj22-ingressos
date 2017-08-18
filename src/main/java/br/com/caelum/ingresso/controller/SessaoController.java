@@ -77,11 +77,11 @@ public class SessaoController {
 		ModelAndView modelAndView = new ModelAndView("sessao/lugares");
 		
 		Sessao sessao = sessaoDao.findOne(sessaoId);
-		Optional<ImagemCapa> imagemCapa = Client.request(sessao.getFilme(), ImagemCapa.class);
+		//Optional<ImagemCapa> imagemCapa = Client.request(sessao.getFilme(), ImagemCapa.class);
 		
 		
 		modelAndView.addObject("sessao", sessao);
-		modelAndView.addObject("imagemCapa", imagemCapa.orElse(new ImagemCapa()));
+		//modelAndView.addObject("imagemCapa", imagemCapa.orElse(new ImagemCapa()));
 
 		return modelAndView;
 	}
