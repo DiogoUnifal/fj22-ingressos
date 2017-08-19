@@ -20,6 +20,9 @@
 					<tr>
 						<td>${aluno.nome}</td>
 						<td>
+                        <a href="/admin/aluno/${aluno.id}" class="btn btn-info">Alterar</a>
+                    </td>
+						<td>
 							<a onclick="excluir(${aluno.id})" class="btn btn-danger">Excluir</a>
 						</td>
 					</tr>
@@ -27,7 +30,7 @@
 			</tbody>
 		</table>
 		<div class="col-md-6 col-md-offset-3">
-			<a href="/admin/filme" class="btn btn-block btn-info">Novo</a>
+			<a href="/admin/aluno" class="btn btn-block btn-info">Novo</a>
 		</div>
 		</div>
 		<script>
