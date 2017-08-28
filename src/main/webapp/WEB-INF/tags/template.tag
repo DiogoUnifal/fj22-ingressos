@@ -33,6 +33,8 @@
 				<ul class="nav navbar-nav navbar-right">
 
 
+					<li><a href="/admin/quadras">Quadras</a></li>
+					<li><a href="/admin/terrenos">Terrenos</a></li>
 					<li><a href="/admin/alunos">Alunos</a></li>
 					<li><a href="/admin/filmes">Filmes</a></li>
 					<li><a href="/admin/salas">Salas</a></li>
